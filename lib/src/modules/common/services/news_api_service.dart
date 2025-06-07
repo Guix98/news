@@ -5,7 +5,9 @@ import 'package:news_responsive_app/src/modules/headlines/domain/models/article.
 class NewsApiService {
   NewsApiService();
 
-  Future<List<Article>> fetchTopHeadlines({String country = 'us'}) async {
+  static Future<List<Article>> fetchTopHeadlines({
+    String country = 'us',
+  }) async {
     final response = await DioClient.get(
       '/top-headlines',
       queryParameters: {

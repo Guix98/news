@@ -1,4 +1,5 @@
 {
   "@@locale": "es",
-  "headline": "Noticias Principales"
+  "headline": "Noticias Principales",
+  "loadingError": "Error al cargar los datos"
 }

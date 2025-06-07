@@ -100,6 +100,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Headline News'**
   String get headline;
+
+  /// No description provided for @loadingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading data'**
+  String get loadingError;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -10,4 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get headline => 'Headline News';
+
+  @override
+  String get loadingError => 'Error loading data';
 }
