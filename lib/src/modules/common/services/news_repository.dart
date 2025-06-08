@@ -45,4 +45,17 @@ class NewsRepository {
     final List data = response.data['articles'] ?? [];
     return data.map((json) => Article.fromJson(json)).toList();
   }
+
+  static Future<List<Article>> fetchByDomain(String domain) async {
+    final response = await DioClient.get(
+      '/everything',
+      queryParameters: {
+        'domains': domain,
+        'apiKey': dotenv.env['NEWS_API_KEY'],
+      },
+    );
+
+    final List data = response.data['articles'] ?? [];
+    return data.map((json) => Article.fromJson(json)).toList();
+  }
 }
