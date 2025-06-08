@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadcnApp.router(
-      theme: ThemeData(colorScheme: ColorSchemes.darkZinc(), radius: 0.5),
+      theme: ThemeData(colorScheme: ColorSchemes.darkSlate(), radius: 0.5),
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
