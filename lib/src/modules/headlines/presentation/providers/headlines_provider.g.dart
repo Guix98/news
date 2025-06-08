@@ -6,7 +6,7 @@ part of 'headlines_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$headlinesHash() => r'03eb8c318d14af777b95f60c3337d5e2158b344c';
+String _$headlinesHash() => r'169e109f01ddb39849c9960dbbfc65e92a42fed5';
 
 /// See also [headlines].
 @ProviderFor(headlines)

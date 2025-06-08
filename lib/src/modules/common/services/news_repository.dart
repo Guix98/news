@@ -2,8 +2,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news_responsive_app/src/core/config/dio_client.dart';
 import 'package:news_responsive_app/src/modules/headlines/domain/models/article.dart';
 
-class NewsApiService {
-  NewsApiService();
+class NewsRepository {
+  NewsRepository();
 
   static Future<List<Article>> fetchTopHeadlines({
     String country = 'us',
@@ -21,5 +21,15 @@ class NewsApiService {
         .toList();
 
     return articles;
+  }
+
+  static Future<List<Article>> fetchByQuery(String query) async {
+    final response = await DioClient.get(
+      '/everything',
+      queryParameters: {'q': query, 'apiKey': dotenv.env['NEWS_API_KEY']},
+    );
+
+    final List data = response.data['articles'] ?? [];
+    return data.map((json) => Article.fromJson(json)).toList();
   }
 }

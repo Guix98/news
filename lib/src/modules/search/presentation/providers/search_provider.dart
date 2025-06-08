@@ -2,10 +2,10 @@ import 'package:news_responsive_app/src/modules/common/services/news_repository.
 import 'package:news_responsive_app/src/modules/headlines/domain/models/article.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'headlines_provider.g.dart';
+part 'search_provider.g.dart';
 
 @riverpod
-Future<List<Article>> headlines(HeadlinesRef ref) async {
-  final headlinesList = await NewsRepository.fetchTopHeadlines();
-  return headlinesList;
+Future<List<Article>> search(SearchRef ref, String query) async {
+  if (query.isEmpty) return [];
+  return await NewsRepository.fetchByQuery(query);
 }
