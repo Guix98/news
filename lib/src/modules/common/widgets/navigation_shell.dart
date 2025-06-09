@@ -42,6 +42,7 @@ class NavigationShell extends StatelessWidget {
             ),
           ],
         ),
+        Divider(),
       ],
       child: child,
     );

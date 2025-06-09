@@ -21,7 +21,7 @@ class CountryPage extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     var countryList = CountryCode.values
         .map<CountryData>(
-          (country) => CountryData(flag: country.symbol, name: country.alpha2),
+          (country) => CountryData(flag: country.symbol, name: country.alpha3),
         )
         .toList();
 
@@ -44,9 +44,18 @@ class CountryPage extends ConsumerWidget {
                     },
                   ),
                   builder: (context, item) {
-                    return ItemPickerOption(
-                      value: item,
-                      child: Text(item.toString()).large,
+                    return Tooltip(
+                      tooltip: (context) => TooltipContainer(
+                        child: Text(
+                          countryList
+                              .firstWhere((country) => country.flag == item)
+                              .name,
+                        ),
+                      ),
+                      child: ItemPickerOption(
+                        value: item,
+                        child: Text(item.toString()).large,
+                      ),
                     );
                   },
                 );
