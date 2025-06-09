@@ -37,7 +37,7 @@ class NavigationShell extends StatelessWidget {
             ),
             OutlineButton(
               density: ButtonDensity.icon,
-              onPressed: () => context.go('/domains?domain=bbc.co.uk'),
+              onPressed: () => context.go('/sources'),
               child: const Icon(Icons.language),
             ),
           ],

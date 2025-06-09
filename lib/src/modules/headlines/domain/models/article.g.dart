@@ -27,11 +27,3 @@ Map<String, dynamic> _$ArticleToJson(_Article instance) => <String, dynamic>{
   'publishedAt': instance.publishedAt.toIso8601String(),
   'content': instance.content,
 };
-
-_Source _$SourceFromJson(Map<String, dynamic> json) =>
-    _Source(id: json['id'] as String?, name: json['name'] as String);
-
-Map<String, dynamic> _$SourceToJson(_Source instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-};

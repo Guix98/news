@@ -28,4 +28,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get moreInfo => 'Más Información';
+
+  @override
+  String get category => 'Categoría';
+
+  @override
+  String get language => 'Idioma';
 }

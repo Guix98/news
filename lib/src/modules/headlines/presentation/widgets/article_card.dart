@@ -12,7 +12,7 @@ class ArticleCard extends StatelessWidget {
       elevation: 3,
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () => _openArticle(context, article.url),
+        onTap: () {},
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -37,10 +37,5 @@ class ArticleCard extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _openArticle(BuildContext context, String url) {
-    // Aquí podrías usar `url_launcher` o navegar a una nueva vista
-    debugPrint('Open article: $url');
   }
 }

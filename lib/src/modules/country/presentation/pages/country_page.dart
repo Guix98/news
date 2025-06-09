@@ -2,7 +2,7 @@ import 'package:country_code/country_code.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_responsive_app/l10n/app_localizations.dart';
-import 'package:news_responsive_app/src/modules/common/helpers/url_launcher.dart';
+import 'package:news_responsive_app/src/modules/common/helpers/url_helper.dart';
 import 'package:news_responsive_app/src/modules/country/data/models/country_data.dart';
 import 'package:news_responsive_app/src/modules/country/presentation/providers/country_provider.dart';
 import 'package:news_responsive_app/src/modules/headlines/domain/models/article.dart';

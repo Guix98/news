@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:news_responsive_app/src/modules/common/widgets/navigation_shell.dart';
 import 'package:news_responsive_app/src/modules/country/presentation/pages/country_page.dart';
 import 'package:news_responsive_app/src/modules/domains/presentation/pages/domains_page.dart';
+import 'package:news_responsive_app/src/modules/domains/presentation/pages/sources_page.dart';
 import 'package:news_responsive_app/src/modules/headlines/presentation/pages/headlines_page.dart';
 import 'package:news_responsive_app/src/modules/search/presentation/pages/search_page.dart';
 
@@ -33,6 +34,7 @@ final appRouter = GoRouter(
             return DomainsPage(domain: domain);
           },
         ),
+        GoRoute(path: '/sources', builder: (_, __) => const SourcesPage()),
       ],
     ),
   ],
