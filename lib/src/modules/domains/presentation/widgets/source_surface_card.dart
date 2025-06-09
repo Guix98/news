@@ -1,5 +1,6 @@
 import 'package:news_responsive_app/l10n/app_localizations.dart';
 import 'package:news_responsive_app/src/modules/common/helpers/url_helper.dart';
+import 'package:news_responsive_app/src/modules/common/widgets/description_text_row.dart';
 import 'package:news_responsive_app/src/modules/domains/data/models/source.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
@@ -13,40 +14,22 @@ class SourceSurfaceCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     return SurfaceCard(
       child: Basic(
-        title: Text(source.name ?? ''),
         content: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  l10n.category,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ).p,
-                Text(source.category?.toUpperCase() ?? 'N/A').p,
-              ],
+            DescriptionTextRow(
+              label: l10n.category,
+              value: source.category?.toUpperCase() ?? 'N/A',
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  l10n.country,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ).p,
-                Text(source.country?.toUpperCase() ?? 'N/A').p,
-              ],
+            DescriptionTextRow(
+              label: l10n.country,
+              value: source.country?.toUpperCase() ?? 'N/A',
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  l10n.language,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ).p,
-                Text(source.language?.toUpperCase() ?? 'N/A').p,
-              ],
+            DescriptionTextRow(
+              label: l10n.language,
+              value: source.language?.toUpperCase() ?? 'N/A',
             ),
-            TextButton(
+            SizedBox(height: 16),
+            GhostButton(
               onPressed: () {
                 tryLaunchURL(source.url ?? '');
               },
