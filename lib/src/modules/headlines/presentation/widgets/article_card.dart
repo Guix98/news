@@ -12,29 +12,30 @@ class ArticleCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: GestureDetector(
         onTap: () {},
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (article.urlToImage != null)
-                Image.network(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (article.urlToImage != null)
+              Flexible(
+                flex: 5,
+                child: Image.network(
                   article.urlToImage!,
 
                   width: double.infinity,
                   fit: BoxFit.cover,
                   errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                 ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  article.title,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ).h4,
               ),
-            ],
-          ),
+            Flexible(
+              flex: 3,
+              child: Text(
+                article.title,
+                maxLines: 100,
+                overflow: TextOverflow.ellipsis,
+              ).large,
+            ),
+          ],
         ),
       ),
     );

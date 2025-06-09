@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_responsive_app/l10n/app_localizations.dart';
 import 'package:news_responsive_app/src/modules/common/helpers/url_helper.dart';
 import 'package:news_responsive_app/src/modules/domains/data/models/source.dart';
 import 'package:news_responsive_app/src/modules/domains/presentation/providers/sources_provider.dart';
@@ -12,11 +13,12 @@ class SourcesPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sourcesAsync = ref.watch(sourcesProvider);
-
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       child: sourcesAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, _) => Center(child: Text('Error: $err')),
+        error: (err, _) =>
+            Center(child: Text(l10n.loadingError, textAlign: TextAlign.center)),
         data: (List<Source> sources) {
           return Padding(
             padding: const EdgeInsets.all(16),

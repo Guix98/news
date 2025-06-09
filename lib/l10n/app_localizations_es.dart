@@ -34,4 +34,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get language => 'Idioma';
+
+  @override
+  String get search => 'Buscar';
+
+  @override
+  String get domain => 'Dominio';
+
+  @override
+  String get sources => 'Fuentes';
 }

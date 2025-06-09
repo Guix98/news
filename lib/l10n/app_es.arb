@@ -8,5 +8,8 @@
   "newsApiDisclaimerDescription": "NewsAPI actualmente solo admite noticias de los Estados Unidos (US). Otros países no están disponibles.",
   "moreInfo": "Más Información",
   "category": "Categoría",
-  "language": "Idioma"
+  "language": "Idioma",
+  "search": "Buscar",
+  "domain": "Dominio",
+  "sources": "Fuentes"
 }

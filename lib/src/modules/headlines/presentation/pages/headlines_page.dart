@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_responsive_app/l10n/app_localizations.dart';
+import 'package:news_responsive_app/src/modules/common/widgets/adaptive_grid.dart';
 import 'package:news_responsive_app/src/modules/headlines/presentation/providers/headlines_provider.dart';
 import 'package:news_responsive_app/src/modules/headlines/presentation/widgets/article_card.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
@@ -17,25 +18,9 @@ class HeadlinesPage extends ConsumerWidget {
       error: (err, _) =>
           Center(child: Text(l10n.loadingError, textAlign: TextAlign.center)),
       data: (articles) {
-        return LayoutBuilder(
-          builder: (context, constraints) {
-            final isTablet = constraints.maxWidth > 600;
-
-            return GridView.builder(
-              padding: const EdgeInsets.all(16),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: isTablet ? 3 : 1,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: isTablet ? 1.2 : 2.8,
-              ),
-              itemCount: articles.length,
-              itemBuilder: (context, index) {
-                final article = articles[index];
-                return ArticleCard(article: article);
-              },
-            );
-          },
+        return AdaptiveGrid(
+          items: articles,
+          itemBuilder: (_, i) => ArticleCard(article: articles[i]),
         );
       },
     );

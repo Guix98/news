@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_responsive_app/l10n/app_localizations.dart';
+import 'package:news_responsive_app/src/modules/common/widgets/adaptive_grid.dart';
 import 'package:news_responsive_app/src/modules/domains/presentation/providers/domains_provider.dart';
 import 'package:news_responsive_app/src/modules/headlines/domain/models/article.dart';
 import 'package:news_responsive_app/src/modules/headlines/presentation/widgets/article_card.dart';
@@ -12,15 +14,15 @@ class DomainsPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final result = ref.watch(domainsProvider(domain));
-
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       child: result.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Error: $e')),
+        error: (err, _) =>
+            Center(child: Text(l10n.loadingError, textAlign: TextAlign.center)),
         data: (List<Article> articles) {
-          return ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: articles.length,
+          return AdaptiveGrid(
+            items: articles,
             itemBuilder: (_, i) => ArticleCard(article: articles[i]),
           );
         },

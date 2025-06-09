@@ -34,4 +34,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get language => 'Language';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get domain => 'Domain';
+
+  @override
+  String get sources => 'Sources';
 }

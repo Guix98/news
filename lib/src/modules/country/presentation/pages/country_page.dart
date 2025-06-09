@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_responsive_app/l10n/app_localizations.dart';
 import 'package:news_responsive_app/src/modules/common/helpers/url_helper.dart';
+import 'package:news_responsive_app/src/modules/common/widgets/adaptive_grid.dart';
 import 'package:news_responsive_app/src/modules/country/data/models/country_data.dart';
 import 'package:news_responsive_app/src/modules/country/presentation/providers/country_provider.dart';
 import 'package:news_responsive_app/src/modules/headlines/domain/models/article.dart';
@@ -71,7 +72,8 @@ class CountryPage extends ConsumerWidget {
       ],
       child: result.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Error: $e')),
+        error: (err, _) =>
+            Center(child: Text(l10n.loadingError, textAlign: TextAlign.center)),
         data: (List<Article> articles) {
           if (articles.isEmpty) {
             return Padding(
@@ -103,9 +105,8 @@ class CountryPage extends ConsumerWidget {
               ),
             );
           }
-          return ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: articles.length,
+          return AdaptiveGrid(
+            items: articles,
             itemBuilder: (_, i) => ArticleCard(article: articles[i]),
           );
         },
