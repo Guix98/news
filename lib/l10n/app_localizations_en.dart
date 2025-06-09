@@ -13,4 +13,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loadingError => 'Error loading data';
+
+  @override
+  String get changeCountry => 'Change Country';
+
+  @override
+  String get country => 'Country';
+
+  @override
+  String get newsApiDisclaimerTitle => 'NewsAPI Disclaimer';
+
+  @override
+  String get newsApiDisclaimerDescription => 'NewsAPI currently only supports news from the United States (US). Other countries are not available.';
+
+  @override
+  String get moreInfo => 'More Info';
 }

@@ -1,5 +1,10 @@
 {
   "@@locale": "es",
   "headline": "Noticias Principales",
-  "loadingError": "Error al cargar los datos"
+  "loadingError": "Error al cargar los datos",
+  "changeCountry": "Cambiar País",
+  "country": "País",
+  "newsApiDisclaimerTitle": "Aviso de NewsAPI",
+  "newsApiDisclaimerDescription": "NewsAPI actualmente solo admite noticias de los Estados Unidos (US). Otros países no están disponibles.",
+  "moreInfo": "Más Información"
 }

@@ -16,7 +16,7 @@ class NavigationShell extends StatelessWidget {
         AppBar(
           header: Text(l10n.headline),
           title: const Text('NewsApp'),
-          subtitle: const Text('Powered by NewsAPI'),
+          subtitle: Text('Powered by NewsAPI'),
           leading: [
             OutlineButton(
               density: ButtonDensity.icon,

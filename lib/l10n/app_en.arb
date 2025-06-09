@@ -1,5 +1,10 @@
 {
   "@@locale": "en",
   "headline": "Headline News",
-  "loadingError": "Error loading data"
+  "loadingError": "Error loading data",
+  "changeCountry": "Change Country",
+  "country": "Country",
+  "newsApiDisclaimerTitle": "NewsAPI Disclaimer",
+  "newsApiDisclaimerDescription": "NewsAPI currently only supports news from the United States (US). Other countries are not available.",
+  "moreInfo": "More Info"
 }

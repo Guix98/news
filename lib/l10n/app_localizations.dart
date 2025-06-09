@@ -106,6 +106,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error loading data'**
   String get loadingError;
+
+  /// No description provided for @changeCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Country'**
+  String get changeCountry;
+
+  /// No description provided for @country.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get country;
+
+  /// No description provided for @newsApiDisclaimerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'NewsAPI Disclaimer'**
+  String get newsApiDisclaimerTitle;
+
+  /// No description provided for @newsApiDisclaimerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'NewsAPI currently only supports news from the United States (US). Other countries are not available.'**
+  String get newsApiDisclaimerDescription;
+
+  /// No description provided for @moreInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'More Info'**
+  String get moreInfo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
