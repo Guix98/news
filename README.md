@@ -23,20 +23,18 @@ A clean, responsive, multilingual news app built with **Flutter** using the [New
 
 ```
 lib/
+├── l10n/                       # .arb files, generated l10n
 ├── core/                       # Global configuration
 │   ├── config/                 # Dio client, env, themes
-│   ├── localization/           # .arb files, generated l10n
 │   ├── router/                 # App router with ShellRoute
-│   ├── extensions/             # e.g., context.screenSize
-│   ├── utils/                  # Responsive helpers, etc.
-│   └── widgets/                # Shared widgets like NavigationShell
+│   └── extensions/             # e.g., context.screenSize
 ├── modules/
+│   ├── common/                 # Shared utils and components
 │   ├── headlines/              # Headlines screen + article model
 │   ├── search/                 # Search by keyword
 │   ├── country/                # Filter by country code
 │   ├── domains/                # Filter by domain
 │   └── sources/                # Source listing from /v2/sources
-├── shared/                     # Reusable components (buttons, cards, etc.)
 └── main.dart                   # Entry point with ShadcnApp.router
 ```
 
@@ -45,22 +43,26 @@ lib/
 ## 🚀 How to Run
 
 1. Clone the repo:
+
    ```bash
-   git clone https://github.com/your-org/news_responsive_app.git
+   git clone https://github.com/guix98/news_responsive_app.git
    cd news_responsive_app
    ```
 
 2. Create a `.env` file:
+
    ```
    NEWS_API_KEY=your_api_key_here
    ```
 
 3. Install dependencies:
+
    ```bash
    flutter pub get
    ```
 
 4. Generate Freezed/Riverpod code:
+
    ```bash
    flutter pub run build_runner build --delete-conflicting-outputs
    ```
@@ -74,7 +76,7 @@ lib/
 
 ## 🌍 Internationalization
 
-- All text is defined in `.arb` files under `lib/core/localization/l10n`.
+- All text is defined in `.arb` files under `lib/l10n`.
 - Supports **English** and **Spanish** via Flutter's `gen-l10n`.
 
 ---
@@ -108,13 +110,13 @@ Follows a clean modular structure:
 
 ## 🧪 Current Pages
 
-| Route              | Description                          |
-|--------------------|--------------------------------------|
-| `/`                | Home - Top headlines                 |
-| `/search?q=...`    | Search by keyword                    |
-| `/country?code=us` | News filtered by country             |
-| `/domains?domain=` | News filtered by domain (e.g. CNN)   |
-| `/sources`         | List of all available sources        |
+| Route              | Description                        |
+| ------------------ | ---------------------------------- |
+| `/`                | Home - Top headlines               |
+| `/search?q=...`    | Search by keyword                  |
+| `/country?code=us` | News filtered by country           |
+| `/domains?domain=` | News filtered by domain (e.g. CNN) |
+| `/sources`         | List of all available sources      |
 
 ---
 
@@ -129,10 +131,4 @@ Follows a clean modular structure:
 
 ## 👨‍💻 Author
 
-Created by [Guido Hernani](https://github.com/your-username) as part of a Flutter code challenge using the latest 2025 stack.
-
----
-
-## 📄 License
-
-MIT
+Created by [Guido Hernani](https://github.com/guix98) as part of a Flutter code challenge using the latest 2025 stack.
